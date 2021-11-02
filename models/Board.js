@@ -16,14 +16,17 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+      category: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
       image_url: {
         type: DataTypes.STRING,
-        allowNull: false,
       },
       is_secret: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
-        defaultValue: false,
+        defaultValue: true,
       },
       like_num: {
         type: DataTypes.INTEGER,
@@ -34,6 +37,16 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
+      },
+      created_at: {
+        type: DataTypes.DATETIME,
+        allowNull: false,
+        defaultValue: today,
+      },
+      updated_at: {
+        type: DataTypes.DATETIME,
+        allowNull: false,
+        defaultValue: today,
       },
       is_hot: {
         type: DataTypes.BOOLEAN,

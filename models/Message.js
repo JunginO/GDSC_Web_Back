@@ -9,15 +9,10 @@ module,
           autoIncrement: true,
           primaryKey: true,
         },
-        like_category: {
-          type: DataTypes.INTEGER,
+        content: {
+          type: DataTypes.TEXT,
           allowNull: false,
         },
-        ref_id: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-        },
-
         created_at: {
           type: DataTypes.DATETIME,
           allowNull: false,

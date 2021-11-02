@@ -44,7 +44,17 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.Board.belongsTo(db.User, { foreignKey: "user_id" });
+db.Comment.belongsTo(db.Board, { foreignKey: "board_id" });
+db.Comment.belongsTo(db.User, { foreignKey: "user_id" });
+db.Liked.belongsTo(db.User, { foreignKey: "user_id" });
+db.Message.belongsTo(db.User, { foreignKey: "from_id" });
+db.Message.belongsTo(db.User, { foreignKey: "to_id" });
 //comment에서는 boardid랑 userid 두개해줘야함
 db.User = require("./User")(sequelize, Sequelize);
 db.Board = require("./Board")(sequelize, Sequelize);
+db.BoardCategory = require("./BoardCategory")(sequelize, Sequelize);
+db.Comment = require("./Comment")(sequelize, Sequelize);
+db.Liked = require("./Liked")(sequelize, Sequelize);
+db.Message = require("./Message")(sequelize, Sequelize);
+
 module.exports = db;
