@@ -1,34 +1,22 @@
-module,
-  (exports = (sequelize, DataTypes) => {
-    return sequelize.define(
-      "User",
-      {
-        id: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-          autoIncrement: true,
-          primaryKey: true,
-        },
-        like_category: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-        },
-        ref_id: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-        },
-
-        created_at: {
-          type: DataTypes.DATETIME,
-          allowNull: false,
-          defaultValue: today,
-        },
-        updated_at: {
-          type: DataTypes.DATETIME,
-          allowNull: false,
-          defaultValue: today,
-        },
+module.exports = (sequelize, DataTypes) => {
+  return sequelize.define(
+    "Liked",
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
       },
-      { timestamps: true, underscored: true }
-    );
-  });
+      like_category: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      ref_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+    },
+    { timestamps: true, underscored: true }
+  );
+};

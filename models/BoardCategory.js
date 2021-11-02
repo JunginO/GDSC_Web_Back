@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define(
-    "Board",
+    "BoardCategory",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -11,16 +11,6 @@ module.exports = (sequelize, DataTypes) => {
       category_name: {
         type: DataTypes.STRING,
         allowNull: false,
-      },
-      created_at: {
-        type: DataTypes.DATETIME,
-        allowNull: false,
-        defaultValue: today,
-      },
-      updated_at: {
-        type: DataTypes.DATETIME,
-        allowNull: false,
-        defaultValue: today,
       },
     },
     { timestamps: true, underscored: true }

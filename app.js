@@ -4,7 +4,8 @@ const port = 5000;
 const cors = require("cors");
 
 const router = require("./router/index");
-
+const { sequelize } = require("./models");
+sequelize.sync();
 app.use(
   cors({
     origin: true,
@@ -12,7 +13,7 @@ app.use(
   })
 );
 app.listen(port, () => {
-  console.log("server on" + port);
+  console.log("server on " + port);
 });
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

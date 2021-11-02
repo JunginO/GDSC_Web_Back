@@ -38,16 +38,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         defaultValue: 0,
       },
-      created_at: {
-        type: DataTypes.DATETIME,
-        allowNull: false,
-        defaultValue: today,
-      },
-      updated_at: {
-        type: DataTypes.DATETIME,
-        allowNull: false,
-        defaultValue: today,
-      },
+
       is_hot: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
